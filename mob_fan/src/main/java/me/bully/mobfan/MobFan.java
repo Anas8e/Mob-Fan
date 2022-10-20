@@ -51,6 +51,9 @@ public final class MobFan extends JavaPlugin implements Listener {
             final double VELOCITY = 0.2;
             for (World world : Bukkit.getWorlds()) {
                 for (Entity entity : world.getEntities()) {
+                    if(entity.getType().equals(EntityType.PLAYER)){
+                        continue;
+                    }
                     Block block = entity.getLocation().getBlock();
                     Vector entityDirection = entity.getVelocity();
                     for (int i = 0; i < 8; i++) {
